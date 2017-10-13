@@ -21,6 +21,11 @@ def hello():
     return html.format(name=os.getenv("NAME", "world"), hostname=socket.gethostname(), visits=visits)
 
 if __name__ == "__main__":
+    fout = open("demo_file.txt","w")
+    fout.write("Hello from docker!")
+    fout.close()
     app.run(host='0.0.0.0', port=80)
-    print "Hello from docker!"
+
+    
+    
 
